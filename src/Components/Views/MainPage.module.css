@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url('https://images6.alphacoders.com/114/1140114.jpg');
+    background-image: url('https://wallpapercave.com/wp/wp2553726.jpg');
     background-position: center center;
     height: 50%;
     padding: 10% 30%;
@@ -10,6 +10,12 @@
     background-size: cover;
     background-repeat: none;
     object-fit: cover;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.641);
+    padding: 10%;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -23,24 +29,6 @@
 .hero form {
     display: flex;
     justify-content: center;
-}
-
-.hero button {
-    height: 30px;
-    border-radius: 3px;
-    border: none;
-    padding: 5px 20px;
-    background-color: rgb(66, 179, 99);
-    color: white;
-}
-
-.hero input {
-    margin: 0 10px;
-    height: 20px;
-    width: 300px;
-    border-radius: 2px;
-    border: none;
-    padding: 5px 20px;
 }
 
 .pokemon-cards {

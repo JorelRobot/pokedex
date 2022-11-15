@@ -7,8 +7,10 @@ const MainPage = () => {
     return (
         <>
             <div className={classes.hero}>
-                <h1>Search information about your favorite pokemon</h1>
-                <FormSearcher />
+                <div className={classes['hero-content']}>
+                    <h1>Search information about your favorite pokemon</h1>
+                    <FormSearcher />
+                </div>
             </div>
             <div className={classes['pokemon-cards']}>
                 <PokemonCard
