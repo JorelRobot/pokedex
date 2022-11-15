@@ -1,0 +1,38 @@
+.pokemon-card {
+    display: grid;
+    grid-template-rows: 1fr .6fr;
+    padding: 0 10%;
+    border-radius: 10px;
+}
+
+.bg-grass {
+    background-color: rgb(106, 207, 106);
+}
+
+.bg-fire {
+    background-color: rgb(255, 166, 0);
+}
+
+.bg-water {
+    background-color: rgb(0, 181, 184);
+}
+
+.pokemon-card img {
+    width: 100%;
+}
+
+.pokemon-card h2 {
+    color: white;
+    font-weight: 1;
+}
+
+.pokemon-card a {
+    text-decoration: none;
+    color: white;
+    font-weight: 1;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+}

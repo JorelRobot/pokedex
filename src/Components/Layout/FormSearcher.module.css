@@ -1,0 +1,23 @@
+form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+input {
+    margin: 0 10px;
+    height: 20px;
+    width: 300px;
+    border-radius: 2px;
+    border: none;
+    padding: 5px 20px;
+}
+
+button {
+    height: 30px;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 20px;
+    background-color: rgb(66, 179, 99);
+    color: white;
+}
