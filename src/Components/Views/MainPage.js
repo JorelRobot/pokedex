@@ -12,6 +12,7 @@ const MainPage = () => {
                     <FormSearcher />
                 </div>
             </div>
+            <h1 className={classes['section-title']}>Try it with the unforgetable initial pokemons</h1>
             <div className={classes['pokemon-cards']}>
                 <PokemonCard
                     pokemon-img='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png'
