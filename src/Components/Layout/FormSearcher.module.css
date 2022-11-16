@@ -18,7 +18,13 @@ button {
     height: 40px;
     border-radius: 3px;
     padding: 5px 20px;
-    background-color: rgb(66, 179, 99);
+    background-color: rgb(20, 182, 69);
     border: none;
     color: white;
+    transition: background-color .2s ease-out;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(71, 209, 113);
 }
