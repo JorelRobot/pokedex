@@ -3,6 +3,7 @@
     grid-template-rows: 1fr .6fr;
     padding: 10% 10%;
     border-radius: 10px;
+    transition: all 300ms;
 }
 
 .bg-grass {
@@ -40,6 +41,10 @@
 
 .pokemon-card a:hover {
     background-color: rgba(255, 255, 255, 0.191);
+}
+
+.pokemon-card:hover {
+    transform: scale(1.05);
 }
 
 .content-center {

@@ -1,8 +1,8 @@
-footer {
+.footer {
     background-color: rgb(22, 43, 66);
 }
 
-p {
+.footer p {
     text-align: center;
     margin: 0;
     padding: 3%;
