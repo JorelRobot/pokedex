@@ -6,8 +6,8 @@ const MainContent = () => {
 
     return (
         <main>
-            <MainPage />
-            {/* <PokemonDetails /> */}
+            {/* <MainPage /> */}
+            <PokemonDetails />
         </main>
     );
 };
