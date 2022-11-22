@@ -10,7 +10,7 @@ const Header = () => {
                     alt="Page" />
                 <h1>Pokedex</h1>
             </div>
-            <FormSearcher />
+            <FormSearcher id='header-searcher'/>
         </header>
     );
 };

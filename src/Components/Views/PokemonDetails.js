@@ -14,19 +14,19 @@ const PokemonDetails = () => {
                 </ul>
             </div>
             <div className={classes['pokemon-section']}>
-                    <h3>Moves</h3>
-                    <ul>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                        <li>Move X</li>
-                    </ul>
-                </div>
+                <h3>Moves</h3>
+                <ul>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                    <li>Move X</li>
+                </ul>
+            </div>
         </div>
     );
 };

@@ -9,7 +9,7 @@ const MainPage = () => {
             <div className={classes.hero}>
                 <div className={classes['hero-content']}>
                     <h1>Search information about your favorite pokemon</h1>
-                    <FormSearcher />
+                    <FormSearcher id='hero-searcher' />
                 </div>
             </div>
             <h1 className={classes['section-title']}>Try it with the unforgetable initial pokemons</h1>
