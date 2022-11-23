@@ -1,7 +1,7 @@
 import FormSearcher from './FormSearcher';
 import classes from './Header.module.css';
 
-const Header = () => {
+const Header = (props) => {
 
     return (
         <header className={classes['main-header']}>
@@ -10,7 +10,7 @@ const Header = () => {
                     alt="Page" />
                 <h1>Pokedex</h1>
             </div>
-            <FormSearcher id='header-searcher'/>
+            <FormSearcher id='header-searcher' onSearchPokemon={props.onSearchPokemon}/>
         </header>
     );
 };

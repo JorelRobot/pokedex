@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './FormSearcher.module.css';
 
 const FormSearcher = (props) => {
 
     const [allPokemons, setAllPokemons] = useState(null);
+    const pokemonToSearch = useRef();
 
     useEffect(() => {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=1154&offset=0')
@@ -13,12 +14,28 @@ const FormSearcher = (props) => {
             })
     }, []);
 
-    console.log(allPokemons);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        let pokemonObject = allPokemons.results.find(pkmn => pkmn.name === pokemonToSearch.current.value);
+
+        if (pokemonObject != null) {
+            props.onSearchPokemon(pokemonObject.url);
+        } else {
+            props.onSearchPokemon(null);
+        }
+        
+    };
+
+
+    //console.log(allPokemons);
 
     return (
-        <form>
-            <input list={props.id} type='text' placeholder='Type a pokemon name here' />
-            <button type='submit'>Search</button>
+        <>
+            <form onSubmit={handleSubmit}>
+                <input list={props.id} type='text' ref={pokemonToSearch} placeholder='Type a pokemon name here' />
+                <button type='submit'>Search</button>
+            </form>
 
             <datalist id={props.id}>
                 {allPokemons != null ? allPokemons.results.map((pkmn) => {
@@ -27,7 +44,7 @@ const FormSearcher = (props) => {
                     );
                 }) : null}
             </datalist>
-        </form>
+        </>
     );
 };
 

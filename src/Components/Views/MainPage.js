@@ -2,14 +2,14 @@ import FormSearcher from '../Layout/FormSearcher';
 import PokemonCard from '../UI/PokemonCard/PokemonCard';
 import classes from './MainPage.module.css';
 
-const MainPage = () => {
+const MainPage = (props) => {
 
     return (
         <>
             <div className={classes.hero}>
                 <div className={classes['hero-content']}>
                     <h1>Search information about your favorite pokemon</h1>
-                    <FormSearcher id='hero-searcher' />
+                    <FormSearcher id='hero-searcher' onSearchPokemon={props.onSearchPokemon}/>
                 </div>
             </div>
             <h1 className={classes['section-title']}>Try it with the unforgetable initial pokemons</h1>
