@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './Components/Layout/Footer';
 import Header from './Components/Layout/Header';
@@ -7,44 +7,19 @@ import PokemonDetails from './Components/Views/PokemonDetails';
 
 function App() {
 
-  const [view, setView] = useState('index');
-  const [pokemonUrl, setPokemonUrl] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem('view', 'index');
-  }, []);
-
-  const handleSearchPokemon = (pkmnUrl) => {
-    if (pkmnUrl != null) {
-      setPokemonUrl(pkmnUrl);
-      setView('pokemon-details');
-    } else {
-      setPokemonUrl('');
-      setView('pokemon-not-found');
-    }
-  };
-
-  const changeView = (v) => {
-    switch (view) {
-      case 'index':
-        return <MainPage onSearchPokemon={handleSearchPokemon} />
-      case 'pokemon-details':
-        return <PokemonDetails url={pokemonUrl} />
-      case 'pokemon-not-found':
-        break;
-      default:
-        break;
-    }
-  };
-
   return (
-    <div>
-      <Header onSearchPokemon={handleSearchPokemon} />
-      <main>
-        {changeView(view)}
-      </main>
+    <BrowserRouter >
+      <Header />
+
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/pokemon-details/:pokemonName' element={<PokemonDetails />} />
+        <Route path='/pokemon-not-found' element={<h1>No existe ese pokemon :/</h1>} />
+        <Route path='*' element={<h1>Error 404 - NOT FOUND :\</h1>} />
+      </Routes>
+
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 

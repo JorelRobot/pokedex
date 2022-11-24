@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './FormSearcher.module.css';
 
 const FormSearcher = (props) => {
 
     const [allPokemons, setAllPokemons] = useState(null);
     const pokemonToSearch = useRef();
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=1154&offset=0')
@@ -20,9 +22,9 @@ const FormSearcher = (props) => {
         let pokemonObject = allPokemons.results.find(pkmn => pkmn.name === pokemonToSearch.current.value);
 
         if (pokemonObject != null) {
-            props.onSearchPokemon(pokemonObject.url);
+            navigate(`/pokemon-details/${pokemonObject.name}`);
         } else {
-            props.onSearchPokemon(null);
+            navigate('/pokemon-not-found');
         }
         
     };
