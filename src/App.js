@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Footer from './Components/Layout/Footer';
 import Header from './Components/Layout/Header';
@@ -9,6 +9,10 @@ function App() {
 
   const [view, setView] = useState('index');
   const [pokemonUrl, setPokemonUrl] = useState('');
+
+  useEffect(() => {
+    localStorage.setItem('view', 'index');
+  }, []);
 
   const handleSearchPokemon = (pkmnUrl) => {
     if (pkmnUrl != null) {
