@@ -11,13 +11,14 @@
 }
 
 .details-header img {
-    width: 30%;
+    width: 20%;
 }
 
 .details-header h1 {
     font-weight: 1;
     font-size: 50px;
-    margin: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 .details-header p {
@@ -41,6 +42,7 @@
     margin: 5px;
     border-radius: 20px;
     font-size: 12px;
+    text-transform: uppercase;
 }
 
 .pokemon-section {

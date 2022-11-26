@@ -26,7 +26,8 @@ const FormSearcher = (props) => {
         } else {
             navigate('/pokemon-not-found');
         }
-        
+
+        pokemonToSearch.current.value = '';
     };
 
 

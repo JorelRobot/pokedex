@@ -1,33 +1,42 @@
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import classes from './PokemonDetails.module.css';
 
 const PokemonDetails = () => {
+
+    const params = useParams();
+    const [pokemon, setPokemon] = useState(null);
+
+    useEffect(() => {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${params.pokemonName}`)
+            .then((response) => response.json())
+            .then((data) => {
+                setPokemon(data);
+            })
+    }, [params.pokemonName]);
+
+    console.log(pokemon);
+
     return (
-        <div className={classes.container + ' ' + classes.content}>
-            <div className={classes['details-header']}>
-                <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/25.png' alt='Pokemon' />
-                <h1>Pikachu</h1>
-                <p>#25</p>
-                <ul className={classes['pokemon-type']}>
-                    <li>Type</li>
-                    <li>Type</li>
-                    <li>Type</li>
-                </ul>
-            </div>
-            <div className={classes['pokemon-section']}>
-                <h3>Moves</h3>
-                <ul>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                    <li>Move X</li>
-                </ul>
-            </div>
-        </div>
+        <>
+        
+            {pokemon != null && <div className={classes.container + ' ' + classes.content}>
+                <div className={classes['details-header']}>
+                    <img src={pokemon.sprites.other.home.front_default} alt='Pokemon' />
+                    <h1>{pokemon.name}</h1>
+                    <p>#{pokemon.id}</p>
+                    <ul className={classes['pokemon-type']}>
+                        {pokemon.types.map((type) => { return <li key={type.type.name}>{type.type.name}</li>})}
+                    </ul>
+                </div>
+                <div className={classes['pokemon-section']}>
+                    <h3>Stats</h3>
+                    <ul>
+                        {pokemon.stats.map((stat) => { return <li key={stat.stat.name}>{stat.stat.name.toUpperCase()}: {stat.base_stat}</li>})}
+                    </ul>
+                </div>
+            </div>}
+        </>
     );
 };
 
